@@ -49,7 +49,7 @@ function showQuestion() {
   if(questionNo < questionList.length){
     //次の問題がある場合は表示する
     $("#question").html(questionList[questionNo].question);
-    $("#answerButton").attr('src',"images/answerButton1.png");
+    $("#answerButton").attr('src',"images/answerButtonOff.png");
 
     var list = questionList[questionNo].answerList;//回答リスト用配列
 
