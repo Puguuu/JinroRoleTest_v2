@@ -51,6 +51,8 @@ function showQuestion() {
       var valueNumber = i+1;      
       var answerId = "answer" + questionNo + i;//回答用のidを発行
 
+      $("#mondaisu").text(answerId);
+
       if(i == 0){
         radioListHtml += '<input type="radio" name="test" id="' + answerId + '" value="' + valueNumber + '" checked="checked"/>';
       } else {
@@ -95,6 +97,7 @@ function showQuestion() {
   }
   paramHtml += "</table>";
   $("#parameterShow").html(paramHtml);
+  $("mondaisu").html(questionNo);
 }
 
 //パラメータにポイントを加減し、次の質問を表示する
@@ -159,3 +162,4 @@ function defineRole() {
   }
   return defineRoleName;
 }
+
