@@ -51,8 +51,6 @@ function showQuestion() {
       var valueNumber = i+1;      
       var answerId = "answer" + questionNo + i;//回答用のidを発行
 
-      $("#mondaisu").text(answerId);
-
       if(i == 0){
         radioListHtml += '<input type="radio" name="test" id="' + answerId + '" value="' + valueNumber + '" checked="checked"/>';
       } else {
@@ -61,7 +59,7 @@ function showQuestion() {
       radioListHtml += '<label for="' + answerId + '">' + answerStr + '</label>';  
     }
     $("#selectAnswer").html(radioListStart + radioListHtml + radioListEnd).trigger('create');
-       
+    $("#mondaisu").html((questionNo+1)+"/"+questionList.length);
     if((questionNo +1) == questionList.length) {
       //最終質問の場合、診断ボタンを表示
       $("#answerButton .ui-btn-text").text("診断する");
@@ -107,7 +105,6 @@ function nextQuestion() {
   questionNo++;//質問番号を次の番号へ
   showQuestion();
 }
-
 //パラメータを更新する
 function updateParameter(number) {
   //選択した回答のパラメータ加減用配列を取得
@@ -162,4 +159,3 @@ function defineRole() {
   }
   return defineRoleName;
 }
-
