@@ -79,6 +79,7 @@ function showQuestion() {
 
     //レーダーチャートを表示
     $("#chart-canvas").show();
+    $("#mondaisu").hide();
     makeRadarChart();
     //パラメータを表示（テスト用）
     var roleHtml = "<table  border='1'>";
